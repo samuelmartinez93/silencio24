@@ -33,7 +33,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-video-bg" aria-hidden="true" />
+        <div className="hero-video-bg" aria-hidden="true">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hero-abstract.svg"
+            className="hero-video"
+          >
+            <source src="/videos/hero-lodge.webm" type="video/webm" />
+          </video>
+        </div>
       </div>
     </section>
   );

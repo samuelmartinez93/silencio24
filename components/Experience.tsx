@@ -1,3 +1,5 @@
+import { TiltCard } from "./TiltCard";
+
 const experienceCards = [
   {
     title: "24 horas",
@@ -32,13 +34,13 @@ export default function Experience() {
 
       <div className="container cards-grid three-up">
         {experienceCards.map((card) => (
-          <article key={card.title} className="info-card">
+          <TiltCard key={card.title} className="info-card" tiltLimit={10} scale={1.02} spotlight>
             <div className="card-icon" aria-hidden="true">
               {card.icon}
             </div>
             <h3>{card.title}</h3>
             <p>{card.text}</p>
-          </article>
+          </TiltCard>
         ))}
       </div>
     </section>

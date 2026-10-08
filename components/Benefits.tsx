@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { TiltCard } from "./TiltCard";
+
 const benefits = [
   {
     title: "Convivir de otra manera",
@@ -29,10 +31,10 @@ export default function Benefits() {
 
           <div className="stacked-list">
             {benefits.map((item) => (
-              <article key={item.title} className="feature-block">
+              <TiltCard key={item.title} className="feature-block" tiltLimit={8} scale={1.015} spotlight>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-              </article>
+              </TiltCard>
             ))}
           </div>
         </div>

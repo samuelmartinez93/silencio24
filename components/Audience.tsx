@@ -1,3 +1,5 @@
+import { TiltCard } from "./TiltCard";
+
 const audienceYes = [
   "Te apetece probar una experiencia diferente.",
   "Quieres desconectar de la rutina.",
@@ -21,23 +23,23 @@ export default function Audience() {
       </div>
 
       <div className="container audience-grid">
-        <article className="audience-card audience-card-yes">
+        <TiltCard className="audience-card audience-card-yes" tiltLimit={10} scale={1.02} spotlight>
           <h3>Es para ti si…</h3>
           <ul>
             {audienceYes.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </article>
+        </TiltCard>
 
-        <article className="audience-card audience-card-no">
+        <TiltCard className="audience-card audience-card-no" tiltLimit={10} scale={1.02} spotlight>
           <h3>Quizá no sea para ti si…</h3>
           <ul>
             {audienceNo.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </article>
+        </TiltCard>
       </div>
     </section>
   );

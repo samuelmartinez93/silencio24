@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "Experiencia", href: "#experiencia" },
@@ -25,9 +26,13 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#reservas" className="button button-primary nav-cta">
-          Reservar mi plaza
-        </a>
+        <div className="nav-actions">
+          <ThemeToggle />
+
+          <a href="#reservas" className="button button-primary nav-cta">
+            Reservar mi plaza
+          </a>
+        </div>
       </div>
     </header>
   );

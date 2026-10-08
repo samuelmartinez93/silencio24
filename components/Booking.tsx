@@ -2,6 +2,8 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import { TiltCard } from "./TiltCard";
+
 type BookingFormData = {
   name: string;
   email: string;
@@ -99,7 +101,7 @@ export default function Booking() {
             acompañado.
           </p>
 
-          <div className="booking-card">
+          <TiltCard className="booking-card" tiltLimit={9} scale={1.015} spotlight>
             <div className="booking-card-header">
               <span>Próxima edición</span>
             </div>
@@ -110,7 +112,7 @@ export default function Booking() {
               <li>Grupo máximo de 20 personas</li>
               <li>89 € por persona</li>
             </ul>
-          </div>
+          </TiltCard>
 
           <div className="booking-included">
             <h3>Incluye</h3>
@@ -126,7 +128,8 @@ export default function Booking() {
 
         <div className="booking-form-wrap">
           {!isSubmitted ? (
-            <form className="booking-form" onSubmit={handleSubmit} noValidate>
+            <TiltCard className="booking-form" tiltLimit={8} scale={1.01} spotlight>
+              <form onSubmit={handleSubmit} noValidate>
               <div className="field-group">
                 <label htmlFor="name">Nombre</label>
                 <input
@@ -205,15 +208,16 @@ export default function Booking() {
               <button type="submit" className="button button-primary form-button">
                 Reservar mi plaza
               </button>
-            </form>
+              </form>
+            </TiltCard>
           ) : (
-            <div className="success-panel" aria-live="polite">
+            <TiltCard className="success-panel" tiltLimit={7} scale={1.01} spotlight aria-live="polite">
               <h3>Tu solicitud de reserva se ha enviado.</h3>
               <p>Te contactaremos pronto con los siguientes pasos.</p>
               <button type="button" className="button button-secondary" onClick={resetForm}>
                 Enviar otra solicitud
               </button>
-            </div>
+            </TiltCard>
           )}
         </div>
       </div>
