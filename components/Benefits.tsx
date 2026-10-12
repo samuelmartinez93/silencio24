@@ -39,12 +39,11 @@ export default function Benefits() {
           </div>
         </div>
 
-        <div className="benefits-visual" aria-label="Placeholder visual abstracto de la experiencia">
+        <div className="benefits-visual">
           <div className="artwork-frame">
-            {/* TODO: Reemplazar por una imagen editorial real o una composición editorial del evento. */}
             <Image
-              src="/images/hero-abstract.svg"
-              alt="Visual abstracta inspirada en silencio y conexión"
+              src="/images/infinite.webp"
+              alt="Dos anillos luminosos entrelazados sobre un fondo violeta oscuro"
               width={800}
               height={900}
             />

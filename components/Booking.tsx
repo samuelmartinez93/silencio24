@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import BookingOrbit from "./BookingOrbit";
 import { TiltCard } from "./TiltCard";
 
 type BookingFormData = {
@@ -92,6 +93,7 @@ export default function Booking() {
 
   return (
     <section id="reservas" className="section-shell booking-section">
+      <BookingOrbit />
       <div className="container booking-layout">
         <div className="booking-content">
           <p className="section-tag">Próxima edición y reserva</p>
@@ -114,16 +116,6 @@ export default function Booking() {
             </ul>
           </TiltCard>
 
-          <div className="booking-included">
-            <h3>Incluye</h3>
-            <ul>
-              <li>Participación en la experiencia completa</li>
-              <li>Actividades guiadas</li>
-              <li>Comidas indicadas en el programa</li>
-              <li>Acompañamiento de una persona responsable</li>
-              <li>Materiales para la comunicación alternativa</li>
-            </ul>
-          </div>
         </div>
 
         <div className="booking-form-wrap">
@@ -220,6 +212,22 @@ export default function Booking() {
             </TiltCard>
           )}
         </div>
+
+        <TiltCard
+          className="booking-included"
+          tiltLimit={7}
+          scale={1.01}
+          spotlight
+        >
+          <h3>Incluye</h3>
+          <ul>
+            <li>Participación en la experiencia completa</li>
+            <li>Actividades guiadas</li>
+            <li>Comidas indicadas en el programa</li>
+            <li>Acompañamiento de una persona responsable</li>
+            <li>Materiales para la comunicación alternativa</li>
+          </ul>
+        </TiltCard>
       </div>
     </section>
   );
