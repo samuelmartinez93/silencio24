@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 import { TiltCard } from "./TiltCard";
 
@@ -18,6 +21,31 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const theme = document.documentElement.getAttribute("data-theme");
+      const nextTheme = theme === "light" ? false : true;
+      setIsDark(nextTheme);
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.attributeName === "data-theme") {
+          updateTheme();
+          break;
+        }
+      }
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section-shell">
       <div className="container benefits-layout">
@@ -46,6 +74,14 @@ export default function Benefits() {
               alt="Dos anillos luminosos entrelazados sobre un fondo violeta oscuro"
               width={800}
               height={900}
+              className={`artwork-layer ${isDark ? "artwork-visible" : "artwork-hidden"}`}
+            />
+            <Image
+              src="/images/infinitelight.webp"
+              alt="Dos anillos luminosos entrelazados sobre un fondo claro"
+              width={800}
+              height={900}
+              className={`artwork-layer ${isDark ? "artwork-hidden" : "artwork-visible"}`}
             />
           </div>
         </div>
