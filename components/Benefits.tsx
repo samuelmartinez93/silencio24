@@ -59,7 +59,7 @@ export default function Benefits() {
 
           <div className="stacked-list">
             {benefits.map((item) => (
-              <TiltCard key={item.title} className="feature-block" tiltLimit={8} scale={1.015} spotlight>
+              <TiltCard key={item.title} className="feature-block">
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </TiltCard>

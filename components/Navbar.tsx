@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
@@ -8,6 +11,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="site-header">
       <div className="container nav-shell">
@@ -18,20 +23,49 @@ export default function Navbar() {
           <span className="brand-wordmark">SILENCIO 24</span>
         </a>
 
-        <nav className="main-nav" aria-label="Navegación principal">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
-              {item.label}
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span className="menu-toggle-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
+
+        <div
+          id="primary-navigation"
+          className={`nav-content${isMenuOpen ? " is-open" : ""}`}
+        >
+          <nav className="main-nav" aria-label="Navegación principal">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="nav-actions">
+            <ThemeToggle />
+
+            <a
+              href="#reservas"
+              className="button button-primary nav-cta"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Reservar mi plaza
             </a>
-          ))}
-        </nav>
-
-        <div className="nav-actions">
-          <ThemeToggle />
-
-          <a href="#reservas" className="button button-primary nav-cta">
-            Reservar mi plaza
-          </a>
+          </div>
         </div>
       </div>
     </header>

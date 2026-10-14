@@ -7,12 +7,14 @@ export default function Hero() {
         <div className="hero-copy">
           <p className="eyebrow">EXPERIENCIA PRESENCIAL · BARCELONA</p>
           <h1>
-            24 horas. Cero palabras.
-            <span>Una forma distinta de conectar.</span>
+            <span className="hero-title-line">
+              <span className="hero-number">24</span> horas {" "}
+              <span className="hero-number"> 0</span> palabras.
+            </span>
+            <span className="hero-title-line">Una forma distinta de conectar.</span>
           </h1>
           <p className="lead">
-            Una experiencia colectiva para convivir sin hablar, salir de la rutina y
-            descubrir todo lo que comunicamos cuando las palabras desaparecen.
+            Una experiencia colectiva para desconectar de la rutina y conectar sin hablar.
           </p>
 
           <div className="info-pills" aria-label="Detalles de la experiencia">
@@ -39,7 +41,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            poster="/images/hero-abstract.svg"
+            preload="auto"
             className="hero-video"
           >
             <source src="/videos/hero-lodge.webm" type="video/webm" />

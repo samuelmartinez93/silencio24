@@ -39,7 +39,9 @@ export default function Footer() {
           <p className="legal-note">
             SILENCIO 24 no es terapia, tratamiento médico ni retiro religioso.
           </p>
-          <p className="copyright">© {currentYear} SILENCIO 24</p>
+          <p className="copyright">
+            © {currentYear} SILENCIO 24 · Samuel Martínez · DAW 2
+          </p>
         </div>
       </div>
     </footer>

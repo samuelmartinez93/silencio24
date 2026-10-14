@@ -34,7 +34,7 @@ export default function Experience() {
 
       <div className="container cards-grid three-up">
         {experienceCards.map((card) => (
-          <TiltCard key={card.title} className="info-card" tiltLimit={10} scale={1.02} spotlight>
+          <TiltCard key={card.title} className="info-card">
             <div className="card-icon" aria-hidden="true">
               {card.icon}
             </div>

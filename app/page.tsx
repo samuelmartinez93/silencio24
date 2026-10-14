@@ -6,6 +6,7 @@ import HowItWorks from "../components/HowItWorks";
 import Audience from "../components/Audience";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
+import ScrollReveals from "../components/ScrollReveals";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
         <HowItWorks />
         <Audience />
         <Booking />
+        <ScrollReveals />
       </main>
       <Footer />
     </>

@@ -23,7 +23,7 @@ export default function Audience() {
       </div>
 
       <div className="container audience-grid">
-        <TiltCard className="audience-card audience-card-yes" tiltLimit={10} scale={1.02} spotlight>
+        <TiltCard className="audience-card audience-card-yes">
           <h3>Es para ti si…</h3>
           <ul>
             {audienceYes.map((item) => (
@@ -32,7 +32,7 @@ export default function Audience() {
           </ul>
         </TiltCard>
 
-        <TiltCard className="audience-card audience-card-no" tiltLimit={10} scale={1.02} spotlight>
+        <TiltCard className="audience-card audience-card-no">
           <h3>Quizá no sea para ti si…</h3>
           <ul>
             {audienceNo.map((item) => (

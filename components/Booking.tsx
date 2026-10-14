@@ -103,7 +103,7 @@ export default function Booking() {
             acompañado.
           </p>
 
-          <TiltCard className="booking-card" tiltLimit={9} scale={1.015} spotlight>
+          <TiltCard className="booking-card">
             <div className="booking-card-header">
               <span>Próxima edición</span>
             </div>
@@ -112,7 +112,7 @@ export default function Booking() {
               <li>Barcelona</li>
               <li>24 horas</li>
               <li>Grupo máximo de 20 personas</li>
-              <li>89 € por persona</li>
+              <li>67€ por persona</li>
             </ul>
           </TiltCard>
 
@@ -120,7 +120,7 @@ export default function Booking() {
 
         <div className="booking-form-wrap">
           {!isSubmitted ? (
-            <TiltCard className="booking-form" tiltLimit={8} scale={1.01} spotlight>
+            <TiltCard className="booking-form">
               <form onSubmit={handleSubmit} noValidate>
               <div className="field-group">
                 <label htmlFor="name">Nombre</label>
@@ -203,7 +203,7 @@ export default function Booking() {
               </form>
             </TiltCard>
           ) : (
-            <TiltCard className="success-panel" tiltLimit={7} scale={1.01} spotlight aria-live="polite">
+            <TiltCard className="success-panel" aria-live="polite">
               <h3>Tu solicitud de reserva se ha enviado.</h3>
               <p>Te contactaremos pronto con los siguientes pasos.</p>
               <button type="button" className="button button-secondary" onClick={resetForm}>
@@ -213,12 +213,7 @@ export default function Booking() {
           )}
         </div>
 
-        <TiltCard
-          className="booking-included"
-          tiltLimit={7}
-          scale={1.01}
-          spotlight
-        >
+        <TiltCard className="booking-included">
           <h3>Incluye</h3>
           <ul>
             <li>Participación en la experiencia completa</li>
